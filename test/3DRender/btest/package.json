@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "@webassemblyjs/helper-wasm-bytecode": "^1.7.11",
+    "assign-symbols": "^2.0.2",
+    "base": "^3.0.0",
+    "camelcase": "^5.0.0",
+    "for-in": "^1.0.2",
+    "gulp": "^3.9.1",
+    "html-webpack-plugin": "^3.2.0",
+    "is-plain-object": "^2.0.4",
+    "ms": "^2.1.1",
+    "opn": "^5.4.0",
+    "p-limit": "^2.0.0",
+    "source-map-resolve": "^0.5.2",
+    "text-encoding": "^0.7.0",
+    "to-object-path": "^0.3.0",
+    "use": "^3.1.1",
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.0",
+    "yargs": "^12.0.2"
+  }
+}
