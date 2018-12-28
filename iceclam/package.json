@@ -4,6 +4,7 @@
     "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
     "testbuild_loader_assamblyScript_test": "asc test/loader_assamblyScript_test.ts -b build/test/loader_assamblyScript_test.wasm -t build/test/loader_assamblyScript_test.wat --sourceMap --validate --debug",
-    "testbuild_js_as_call_test": "asc test/js_as_call_test.ts -b build/test/js_as_call_test.wasm -t build/test/js_as_call_test.wat --sourceMap --validate --debug"
+    "testbuild_js_as_call_test": "asc test/js_as_call_test.ts -b build/test/js_as_call_test.wasm -t build/test/js_as_call_test.wat --sourceMap --validate --debug",
+    "testbuild_class_test": "asc test/class_test.ts -b build/test/class_test.wasm -t build/test/class_test.wat --sourceMap --validate --debug"
   }
 }
