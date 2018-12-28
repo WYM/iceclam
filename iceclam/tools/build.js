@@ -1,0 +1,1 @@
+const asc = require("../../assemblyscript/cli/asc");

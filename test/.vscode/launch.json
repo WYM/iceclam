@@ -24,16 +24,18 @@
     {
         "type": "node",
         "request": "launch",
-        "name": "Mochajs",
+        "name": "Mocha All",
         "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
         "args": [
-            "-u",
-            "tdd",
+            "-r",
+            "ts-node/register",
             "--timeout",
             "999999",
             "--colors",
-            "${workspaceFolder}/tests/ioc/CustomerIoc.js"
+            "${workspaceFolder}/test/**/*.ts",
         ],
-        "internalConsoleOptions": "openOnSessionStart"
+        "console": "integratedTerminal",
+        "internalConsoleOptions": "neverOpen",
+        "protocol": "inspector"
     }]
 }
