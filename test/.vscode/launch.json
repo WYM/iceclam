@@ -20,5 +20,20 @@
         "protocol": "inspector",
         "console": "integratedTerminal",
         "internalConsoleOptions": "neverOpen"
+    },
+    {
+        "type": "node",
+        "request": "launch",
+        "name": "Mochajs",
+        "program": "${workspaceFolder}/node_modules/mocha/bin/_mocha",
+        "args": [
+            "-u",
+            "tdd",
+            "--timeout",
+            "999999",
+            "--colors",
+            "${workspaceFolder}/tests/ioc/CustomerIoc.js"
+        ],
+        "internalConsoleOptions": "openOnSessionStart"
     }]
 }
