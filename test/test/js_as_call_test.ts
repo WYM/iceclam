@@ -53,7 +53,7 @@ describe("js_as_call_test", () => {
     WebAssembly.instantiate(buffer, {
       env: {
         log(s: string) {
-          console.log(getString(s));
+          expect(getString(s)).to.equals('js call as function')
         },
         abort(mesg, file, line, colm) {
           throw Error("abort: " + mesg + " at " + file + ":" + line + ":" + colm);
