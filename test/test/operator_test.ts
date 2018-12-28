@@ -62,7 +62,7 @@ describe("operator_test", () => {
         }).then(obj => {
             instance = obj.instance;
             exports = instance.exports;
-            expect(exports.test()).to.equals(2);
+            expect(exports.test()).to.equals(3);
         }).catch(console.error);
     })
 })

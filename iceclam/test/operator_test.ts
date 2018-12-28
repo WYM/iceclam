@@ -37,7 +37,7 @@ export function test(): i32 {
     // @ts-ignore
     let v3: Vector2D = v1 + v2;
 
-    let r = v3.x * v3.y;
+    let r = v3.x + v3.y;
     free(v1);
     free(v2);
     return r;
