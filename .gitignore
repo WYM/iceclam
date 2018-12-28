@@ -5,3 +5,7 @@ Cargo.lock
 **/node_modules
 **/.idea
 **/dist
+**/*.wasm
+**/*.wat
+**/*.wasm.map
+**/*.asm.js

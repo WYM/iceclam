@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "testbuild": "asc test/loader_assamblyScript_test.ts -b build/test/untouched.wasm -t build/test/untouched.wat --sourceMap --validate --debug"
+  }
+}
