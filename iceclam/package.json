@@ -6,6 +6,7 @@
     "testbuild_loader_assamblyScript_test": "asc test/loader_assamblyScript_test.ts -b build/test/loader_assamblyScript_test.wasm -t build/test/loader_assamblyScript_test.wat --sourceMap --validate --debug",
     "testbuild_js_as_call_test": "asc test/js_as_call_test.ts -b build/test/js_as_call_test.wasm -t build/test/js_as_call_test.wat --sourceMap --validate --debug",
     "testbuild_class_test": "asc test/class_test.ts -b build/test/class_test.wasm -t build/test/class_test.wat --sourceMap --validate --debug",
-    "testbuild_include_websys_jssys_test": "asc test/include_websys_jssys_test.ts -b build/test/include_websys_jssys_test.wasm -t build/test/include_websys_jssys_test.wat --sourceMap --validate --debug"
+    "testbuild_include_websys_jssys_test": "asc test/include_websys_jssys_test.ts -b build/test/include_websys_jssys_test.wasm -t build/test/include_websys_jssys_test.wat --sourceMap --validate --debug",
+    "testbuild_operator_test": "asc test/operator_test.ts -b build/test/operator_test.wasm -t build/test/operator_test.wat --sourceMap --validate --debug"
   }
 }
