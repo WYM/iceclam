@@ -1,4 +1,5 @@
 "use strict";
+// node --experimental-worker class_export_test.js
 exports.__esModule = true;
 var fs = require("fs");
 var path = require("path");
@@ -29,12 +30,15 @@ var myModule = Loader.instantiateBuffer(buffer, {
         postMessage: function (message) {
             console.log("message:" + message);
             workerInst.postMessage(message);
+            workerInst.terminate();
         },
         terminate: function () {
             workerInst.terminate();
+            process.exit();
         }
     }
 });
 var uint8Array = new util.TextEncoder().encode('./worker.js');
 var ptr = myModule.newArray(uint8Array);
 myModule.test(ptr, 1);
+myModule.destory();

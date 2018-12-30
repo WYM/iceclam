@@ -1,3 +1,5 @@
+// node --experimental-worker class_export_test.js
+
 import * as fs from "fs";
 import * as path from "path";
 import * as util from "util";
@@ -30,13 +32,18 @@ const myModule = Loader.instantiateBuffer(buffer, {
         postMessage(message: string) {
             console.log("message:" + message);
             workerInst.postMessage(message);
+
+            workerInst.terminate();
         },
         terminate() {
             workerInst.terminate();
+            process.exit();
         }
     }
 });
 
 let uint8Array = new util.TextEncoder().encode('./worker.js');
-var ptr = myModule.newArray(uint8Array);
+let ptr = myModule.newArray(uint8Array);
 myModule.test(ptr, 1);
+
+myModule.destory();

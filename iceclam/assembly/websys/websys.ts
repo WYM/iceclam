@@ -5,14 +5,10 @@
 
 /**
  * GLenum Opengl Enum
- * @version Iceclam
- * @platform Web,Native
- * @language en_US
+ * @engine Iceclam
  */
 /**
  * GLenum Opengl 枚举
- * @version Iceclam 
- * @platform Web,Native
- * @language zh_CN
+ * @engine Iceclam 
  */
 export type GLenum = u32;
