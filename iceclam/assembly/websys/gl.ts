@@ -1,13 +1,13 @@
-import { WebGLProgram } from "./webgl_program";
-import { WebGLShader } from "./webgl_shader";
-import { WebGLBuffer } from "./webgl_buffer";
-import { WebGLFramebuffer } from "./webgl_framebuffer";
-import { WebGLRenderbuffer } from "./webgl_renderbuffer";
-import { WebGLTexture } from "./webgl_texture";
+import { WebGLProgram } from "./gl_program";
+import { WebGLShader } from "./gl_shader";
+import { WebGLBuffer } from "./gl_buffer";
+import { WebGLFramebuffer } from "./gl_framebuffer";
+import { WebGLRenderbuffer } from "./gl_render_buffer";
+import { WebGLTexture } from "./gl_texture";
 import { WebGLActiveInfo } from "./gl_activeInfo";
-import { WebGLContextAttributes } from "./webgl_context_attributes";
-import { WebGLUniformLocation } from "./webgl_uniform_location";
-import { WebGLShaderPrecisionFormat } from "./webgl_shader_precision_format";
+import { WebGLContextAttributes } from "./gl_context_attributes";
+import { WebGLUniformLocation } from "./gl_uniform_location";
+import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
 
 export type GLenum = u32;
 export type GLboolean = u8;
