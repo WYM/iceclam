@@ -28,6 +28,7 @@ export function test(): void {
 }
 
 class Test1 extends Par_Class {
+
     public say(): void {
         log("Test");
     }
