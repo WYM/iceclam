@@ -1,7 +1,7 @@
 import { WebGLProgram } from "./gl_program";
 import { WebGLShader } from "./gl_shader";
 import { WebGLBuffer } from "./gl_buffer";
-import { WebGLFramebuffer } from "./gl_framebuffer";
+import { WebGLFramebuffer } from "./gl_frame_buffer";
 import { WebGLRenderbuffer } from "./gl_render_buffer";
 import { WebGLTexture } from "./gl_texture";
 import { WebGLActiveInfo } from "./gl_activeInfo";
