@@ -1,6 +1,5 @@
 import { UObject } from "../base/object";
-import { GLint } from "./gl";
-
+import { GLint } from "./gl_type";
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGLShaderPrecisionFormat
 
 // @ts-ignore

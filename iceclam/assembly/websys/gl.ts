@@ -8,26 +8,30 @@ import { WebGLActiveInfo } from "./gl_activeInfo";
 import { WebGLContextAttributes } from "./gl_context_attributes";
 import { WebGLUniformLocation } from "./gl_uniform_location";
 import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
+import {
+    GLsizei,
+    GLenum,
+    GLuint,
+    GLclampf,
+    BufferSource,
+    GLsizeiptr,
+    GLintptr,
+    GLbitfield,
+    GLboolean,
+    GLint,
+    GLfloat,
+    Float32List,
+    Int32List,
+    TexImageSource
+} from "./gl_type";
+import { EXT_blend_minmax } from "./gl_extensions";
+import { OES_vertex_array_object } from "./gl_oes_vertex_array_object";
 
-export type GLenum = u32;
-export type GLboolean = u8;
-export type GLbitfield = u32;
-export type GLint = i32;
-export type GLsizei = i32;
-export type GLintptr = isize;
-export type GLsizeiptr = isize;
-export type GLuint = u32;
-export type GLfloat = f32;
-export type GLclampf = f32;
-export type BufferSource = ArrayBuffer;
-export type WebGLPowerPreference = "default" | "low-power" | "high-performance";
-export type Float32List = Float32Array | GLfloat[];
-export type Int32List = Int32Array | GLint[];
 
 interface OES_element_index_uint {
 }
 
-interface WebGLRenderingContextBase {
+export interface WebGLRenderingContextBase {
     //readonly canvas: HTMLCanvasElement;
     readonly drawingBufferHeight: GLsizei;
     readonly drawingBufferWidth: GLsizei;
@@ -93,12 +97,12 @@ interface WebGLRenderingContextBase {
     getBufferParameter(target: GLenum, pname: GLenum): any;
     getContextAttributes(): WebGLContextAttributes | null;
     getError(): GLenum;
-    // getExtension(extensionName: "EXT_blend_minmax"): EXT_blend_minmax | null;
+    //getExtension(extensionName: "EXT_blend_minmax"): EXT_blend_minmax | null;
     // getExtension(extensionName: "EXT_texture_filter_anisotropic"): EXT_texture_filter_anisotropic | null;
     // getExtension(extensionName: "EXT_frag_depth"): EXT_frag_depth | null;
     // getExtension(extensionName: "EXT_shader_texture_lod"): EXT_shader_texture_lod | null;
     // getExtension(extensionName: "EXT_sRGB"): EXT_sRGB | null;
-    // getExtension(extensionName: "OES_vertex_array_object"): OES_vertex_array_object | null;
+    getExtension(extensionName: "OES_vertex_array_object"): OES_vertex_array_object | null;
     // getExtension(extensionName: "WEBGL_color_buffer_float"): WEBGL_color_buffer_float | null;
     // getExtension(extensionName: "WEBGL_compressed_texture_astc"): WEBGL_compressed_texture_astc | null;
     // getExtension(extensionName: "WEBGL_compressed_texture_s3tc_srgb"): WEBGL_compressed_texture_s3tc_srgb | null;
@@ -115,7 +119,6 @@ interface WebGLRenderingContextBase {
     // getExtension(extensionName: "OES_standard_derivatives"): OES_standard_derivatives | null;
     // getExtension(extensionName: "OES_element_index_uint"): OES_element_index_uint | null;
     // getExtension(extensionName: "ANGLE_instanced_arrays"): ANGLE_instanced_arrays | null;
-    getExtension(extensionName: string): any;
     getFramebufferAttachmentParameter(target: GLenum, attachment: GLenum, pname: GLenum): any;
     getParameter(pname: GLenum): any;
     getProgramInfoLog(program: WebGLProgram): string | null;
@@ -156,11 +159,11 @@ interface WebGLRenderingContextBase {
     stencilOp(fail: GLenum, zfail: GLenum, zpass: GLenum): void;
     stencilOpSeparate(face: GLenum, fail: GLenum, zfail: GLenum, zpass: GLenum): void;
     texImage2D(target: GLenum, level: GLint, internalformat: GLint, width: GLsizei, height: GLsizei, border: GLint, format: GLenum, type: GLenum, pixels: ArrayBufferView<ArrayBuffer> | null): void;
-    // texImage2D(target: GLenum, level: GLint, internalformat: GLint, format: GLenum, type: GLenum, source: TexImageSource): void;
+    texImage2D(target: GLenum, level: GLint, internalformat: GLint, format: GLenum, type: GLenum, source: TexImageSource): void;
     texParameterf(target: GLenum, pname: GLenum, param: GLfloat): void;
     texParameteri(target: GLenum, pname: GLenum, param: GLint): void;
     texSubImage2D(target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, width: GLsizei, height: GLsizei, format: GLenum, type: GLenum, pixels: ArrayBufferView<ArrayBuffer> | null): void;
-    // texSubImage2D(target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, format: GLenum, type: GLenum, source: TexImageSource): void;
+    texSubImage2D(target: GLenum, level: GLint, xoffset: GLint, yoffset: GLint, format: GLenum, type: GLenum, source: TexImageSource): void;
     uniform1f(location: WebGLUniformLocation | null, x: GLfloat): void;
     uniform1fv(location: WebGLUniformLocation | null, v: Float32List): void;
     uniform1i(location: WebGLUniformLocation | null, x: GLint): void;
