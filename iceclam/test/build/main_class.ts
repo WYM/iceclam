@@ -1,5 +1,5 @@
 import "allocator/tlsf";
-// import { ImportClass } from "./other_class";
+import { ImportClass } from "./other_class";
 
 // @ts-ignore
 export { memory };
@@ -24,6 +24,6 @@ export function Main(): void {
     let iceclam = alloc<Iceclam>();
     free(iceclam);
 
-    // let importclass = alloc<ImportClass>();
-    // free(importclass);
+    let importclass = alloc<ImportClass>();
+    free(importclass);
 }
