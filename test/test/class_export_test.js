@@ -6,7 +6,7 @@ var path = require("path");
 var util = require("util");
 require("mocha");
 var worker_threads_1 = require("worker_threads");
-var Loader = require("../../assemblyscript/lib/loader");
+var Loader = require("../../node_modules/assemblyscript/lib/loader");
 var p = path.resolve(__dirname, "../../iceclam/build/test/class_export_test.wasm");
 var buffer = fs.readFileSync(p);
 var workerInst;
