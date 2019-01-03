@@ -4,7 +4,7 @@ import "mocha";
 import { expect } from "chai";
 
 let instance = null;
-const p = path.resolve(__dirname, "../../iceclam/build/test/class_test.wasm");
+const p = path.resolve(__dirname, "../iceclam/build/test/class_test.wasm");
 const buffer = fs.readFileSync(p);
 
 declare let BigUint64Array;

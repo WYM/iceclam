@@ -5,9 +5,9 @@ import * as path from "path";
 import * as util from "util";
 import "mocha";
 import { Worker } from 'worker_threads';
-import * as Loader from '../../node_modules/assemblyscript/lib/loader';
+import * as Loader from '../node_modules/assemblyscript/lib/loader';
 import { expect } from "chai";
-const p = path.resolve(__dirname, "../../iceclam/build/test/class_export_test.wasm");
+const p = path.resolve(__dirname, "../iceclam/build/test/class_export_test.wasm");
 const buffer = fs.readFileSync(p);
 
 let workerInst: Worker;

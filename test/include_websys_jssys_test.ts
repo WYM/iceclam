@@ -4,7 +4,8 @@ import "mocha";
 import { expect } from "chai";
 
 let instance = null;
-const p = path.resolve(__dirname, "../../iceclam/build/test/operator_test.wasm");
+const p = path.resolve(__dirname, "../iceclam/build/test/include_websys_jssys_test.wasm");
+console.log(p);
 const buffer = fs.readFileSync(p);
 
 declare let BigUint64Array;
@@ -48,12 +49,15 @@ const getString = (ptr) => {
     return parts.join("") + String.fromCharCode.apply(String, U16.subarray(dataOffset, dataOffset + dataRemain));
 }
 
-describe("operator_test", () => {
-    it("operator_test", () => {
+describe("js_as_call_test", () => {
+    it("js_as_call_test", () => {
         WebAssembly.instantiate(buffer, {
             env: {
-                log(s: string) {
-                    console.log(getString(s));
+                log(s: number) {
+                    expect(s).to.equals(1)
+                },
+                info(s: number) {
+                    expect(s).to.equals(2)
                 },
                 abort(mesg, file, line, colm) {
                     throw Error("abort: " + mesg + " at " + file + ":" + line + ":" + colm);
@@ -62,8 +66,9 @@ describe("operator_test", () => {
         }).then(obj => {
             instance = obj.instance;
             exports = instance.exports;
-            expect(exports.test()).to.equals(3);
+            exports.test1();
+            exports.test2();
         }).catch(console.error);
+
     })
 })
-
