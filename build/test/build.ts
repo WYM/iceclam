@@ -1,6 +1,6 @@
-import * as asc from "../../assemblyscript/cli/asc";
-import * as options from "../../assemblyscript/cli/asc.json";
-import * as assemblyscript from "../../assemblyscript/dist/assemblyscript.js";
+import * as asc from "../../node_modules/assemblyscript/cli/asc";
+import * as options from "../../node_modules/assemblyscript/cli/asc.json";
+import * as assemblyscript from "../../node_modules/assemblyscript/dist/assemblyscript.js";
 import * as path from "path";
 import * as fs from "fs";
 
