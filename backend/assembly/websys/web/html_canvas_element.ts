@@ -1,6 +1,6 @@
 import { Assemble } from "../../commands/assemble";
 
-export class HTMLCanvasElement extends Assemble{
+export class HTMLCanvasElement extends Assemble {
 
     /**
      * 
@@ -16,6 +16,8 @@ export class HTMLCanvasElement extends Assemble{
      * @memberof HTMLCanvasElement
      */
     public getContext<T>(): T {
-        return changetype<T>(memory.allocate(offsetof<T>()));
+        let t = changetype<T>(memory.allocate(offsetof<T>()));
+
+        return t;
     }
 }

@@ -33,6 +33,19 @@ export class Assemble {
      * @memberof Assemble
      */
     public constructor() {
-        this._commandbuffer = new CommandBuffer();
+        this._commandbuffer = CommandBuffer.assembleBuffer();
+    }
+
+
+    /**
+     * 提交缓冲区的命令
+     * Commit buffer command
+     *
+     * @author 
+     * @date 2019-01-04
+     * @memberof Assemble
+     */
+    public commit(): void {
+
     }
 }
