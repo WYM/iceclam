@@ -1,5 +1,5 @@
 import { GLenum, GLboolean } from "./gl_type";
-import { UObject } from "../base/object";
+import { UObject } from "../../base/object";
 
 export class WebGLVertexArrayObjectOES extends UObject {
 

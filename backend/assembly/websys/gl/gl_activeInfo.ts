@@ -1,4 +1,4 @@
-import { UObject } from "../base/object";
+import { UObject } from "../../base/object";
 import { GLint, GLenum } from "./gl_type";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo

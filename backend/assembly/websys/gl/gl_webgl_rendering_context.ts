@@ -1,4 +1,4 @@
-import { UObject } from "../base/object";
+import { UObject } from "../../base/object";
 import { WebGLRenderingContextBase } from "./gl";
 import { WebGLProgram } from "./gl_program";
 import { WebGLShader } from "./gl_shader";

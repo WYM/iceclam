@@ -1,5 +1,5 @@
 import { GLenum } from "./gl_type";
-import { UObject } from "../base/object";
+import { UObject } from "../../base/object";
 
 // @ts-ignore
 @external("gl", "getExtension")

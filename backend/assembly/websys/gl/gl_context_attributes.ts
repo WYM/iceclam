@@ -1,4 +1,4 @@
-import { UObject } from "../base/object";
+import { UObject } from "../../base/object";
 import { GLboolean, WebGLPowerPreference } from "./gl_type";
 
 // @ts-ignore
