@@ -1,8 +1,25 @@
 import { Assemble } from "../../commands/assemble";
+import { Command, CommandArgs } from "../../commands/command";
+import { WebGLRenderingContext } from "../gl/gl_webgl_rendering_context";
+import { WebGL2RenderingContext } from "../gl/gl_webgl2_rendering_context";
 
 export class HTMLCanvasElement extends Assemble {
 
     /**
+     * 初始化
+     * initialize
+     *
+     * @author 
+     * @date 2019-01-05
+     * @memberof HTMLCanvasElement
+     */
+    public initialize(): void {
+        this.writeZeroArgsCommand(Command.createCanvas);
+    }
+
+    /**
+     * 
+     * 
      * 
      * ```ts
      * getContext<WebGLRenderingContext>()
@@ -15,9 +32,16 @@ export class HTMLCanvasElement extends Assemble {
      * @returns {T}
      * @memberof HTMLCanvasElement
      */
-    public getContext<T>(): T {
-        let t = changetype<T>(memory.allocate(offsetof<T>()));
-
-        return t;
+    public getContext<T>(): T | undefined {
+        let inst = instantiate<T>();
+        if (inst instanceof WebGLRenderingContext) {
+            inst.writeOneArgsCommand(Command.getContext, CommandArgs.webgl);
+        } else if (inst instanceof WebGL2RenderingContext) {
+            inst.writeOneArgsCommand(Command.getContext, CommandArgs.webgl2);
+        } else {
+            assert(false, 'getContext args mut be WebGLRenderingContext or WebGL2RenderingContext');
+            return;
+        }
+        return inst;
     }
 }

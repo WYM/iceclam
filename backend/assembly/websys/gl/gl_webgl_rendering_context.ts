@@ -1,4 +1,3 @@
-import { UObject } from "../../base/object";
 import { WebGLRenderingContextBase } from "./gl";
 import { WebGLProgram } from "./gl_program";
 import { WebGLShader } from "./gl_shader";
@@ -13,8 +12,9 @@ import { WebGLUniformLocation } from "./gl_uniform_location";
 import { Float32List, Int32List, GLenum, GLsizei } from "./gl_type";
 import { ImageBitmap } from "./gl_Image_bitmap";
 import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
+import { Assemble } from "../../commands/assemble";
 
-export class WebGLRenderingContext extends UObject implements WebGLRenderingContextBase {
+export class WebGLRenderingContext extends Assemble implements WebGLRenderingContextBase {
     public ACTIVE_ATTRIBUTES: GLenum;
     public ACTIVE_TEXTURE: GLenum;
     public ACTIVE_UNIFORMS: GLenum;
