@@ -179,7 +179,6 @@ export class CommandBuffer {
      * @returns {CommandBuffer}
      * @memberof CommandBuffer
      */
-    // @ts-ignore
     @inline
     public static disasembleBuffer(): CommandBuffer {
         if (!this._disasemblebuffer) {
@@ -190,8 +189,8 @@ export class CommandBuffer {
     }
 
     /**
-     * 获取一个为一个ID
-     * Get one for an ID
+     * 获取一个唯一个ID
+     * get a unique ID
      *
      * @author 
      * @date 2019-01-05
@@ -199,7 +198,6 @@ export class CommandBuffer {
      * @returns {f64}
      * @memberof CommandBuffer
      */
-    // @ts-ignore
     @inline
     public static gID(): f64 {
         return id++;
