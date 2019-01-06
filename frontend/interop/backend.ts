@@ -1,16 +1,16 @@
-import loader, { ImportsObject, ASUtil } from "assemblyscript/lib/loader";
+import * as loader from "assemblyscript/lib/loader";
 import { Command } from "../commands/command";
 
-interface CustomeImportsObject extends ImportsObject {
+interface CustomeImportsObject extends loader.ImportsObject {
     command: {
         commit(buffer: Float64Array): void
     },
-    utils: ASUtil
+    utils: loader.ASUtil
 }
 
 export class BackendInterop<T> {
-    private command!: Command;
-    private module!: T & ASUtil;
+    public command!: Command;
+    public module!: T & loader.ASUtil;
 
     public async init(imps: CustomeImportsObject = {} as CustomeImportsObject, buffer: Uint8Array): Promise<BackendInterop<T>> {
         const command = this.command = new Command();

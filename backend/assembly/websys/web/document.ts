@@ -1,3 +1,9 @@
+import "allocator/tlsf";
+
+export interface WebElement {
+    initialize(): void;
+}
+
 /**
  *
  *
@@ -19,9 +25,7 @@ export class document {
      * @returns {T}
      * @memberof document
      */
-    public static getElementById<T extends {
-        initialize(): void
-    }>(): T {
+    public static getElementById<T extends WebElement>(): T {
         let inst = instantiate<T>();
         inst.initialize();
         return inst;

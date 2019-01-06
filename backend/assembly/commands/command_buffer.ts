@@ -68,7 +68,7 @@ export class CommandBuffer {
      * @memberof CommandBuffer
      */
     public constructor() {
-        this._buffer = new Float64Array(2 ** 12);
+        this._buffer = new Float64Array(4096);
         this._offset = 0;
     }
 
@@ -80,7 +80,7 @@ export class CommandBuffer {
      * @param {CommandArgs} arg0
      * @memberof CommandBuffer
      */
-    public write(arg0: CommandArgs | f64): void {
+    public write(arg0: f64): void {
         unchecked(this._buffer[this._offset++] = arg0);
     }
 
@@ -162,11 +162,11 @@ export class CommandBuffer {
      */
     @inline
     public static assembleBuffer(): CommandBuffer {
-        if (!this._assemblebuffer) {
-            this._assemblebuffer = new CommandBuffer();
+        if (!CommandBuffer._assemblebuffer) {
+            CommandBuffer._assemblebuffer = new CommandBuffer();
         }
 
-        return this._assemblebuffer;
+        return CommandBuffer._assemblebuffer;
     }
 
     /**
@@ -181,11 +181,11 @@ export class CommandBuffer {
      */
     @inline
     public static disasembleBuffer(): CommandBuffer {
-        if (!this._disasemblebuffer) {
-            this._disasemblebuffer = new CommandBuffer();
+        if (!CommandBuffer._disasemblebuffer) {
+            CommandBuffer._disasemblebuffer = new CommandBuffer();
         }
 
-        return this._disasemblebuffer;
+        return CommandBuffer._disasemblebuffer;
     }
 
     /**

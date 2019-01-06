@@ -1,4 +1,3 @@
-import { GLenum, GLboolean } from "./gl_type";
 import { UObject } from "../../base/object";
 
 export class WebGLVertexArrayObjectOES extends UObject {
@@ -6,7 +5,7 @@ export class WebGLVertexArrayObjectOES extends UObject {
 }
 
 export class OES_vertex_array_object extends UObject {
-    public readonly VERTEX_ARRAY_BINDING_OES: GLenum;
+    public readonly VERTEX_ARRAY_BINDING_OES: u32 /**GLenum */;
 
     public bindVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES | null): void {
 
@@ -20,7 +19,7 @@ export class OES_vertex_array_object extends UObject {
 
     }
 
-    public isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES | null): GLboolean {
+    public isVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES | null): u8 /**GLboolean */ {
         return 1;
     }
 

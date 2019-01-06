@@ -1,19 +1,18 @@
 import { UObject } from "../../base/object";
-import { GLboolean, WebGLPowerPreference } from "./gl_type";
 
 // @ts-ignore
 @external("gl", "newContextAttributes")
 export declare function newContextAttributes(id: i64): void;
 
 export class WebGLContextAttributes extends UObject {
-    public alpha?: GLboolean;
-    public antialias?: GLboolean;
-    public depth?: GLboolean;
-    public failIfMajorPerformanceCaveat?: boolean;
-    public powerPreference?: WebGLPowerPreference;
-    public premultipliedAlpha?: GLboolean;
-    public preserveDrawingBuffer?: GLboolean;
-    public stencil?: GLboolean;
+    public alpha: u8; /**GLboolean */
+    public antialias: u8; /**GLboolean */
+    public depth: u8; /**GLboolean */
+    public failIfMajorPerformanceCaveat: boolean;
+    public powerPreference: string /** default*/;
+    public premultipliedAlpha: u8; /**GLboolean */
+    public preserveDrawingBuffer: u8; /**GLboolean */
+    public stencil: u8; /**GLboolean */
 
     public create(): void {
         newContextAttributes(this.id);

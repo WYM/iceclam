@@ -1,4 +1,4 @@
-import { WebGLRenderingContextBase } from "./gl";
+// import { WebGLRenderingContextBase } from "./gl";
 import { WebGLProgram } from "./gl_program";
 import { WebGLShader } from "./gl_shader";
 import { WebGLBuffer } from "./gl_buffer";
@@ -9,12 +9,17 @@ import { WebGLActiveInfo } from "./gl_activeInfo";
 import { WebGLContextAttributes } from "./gl_context_attributes";
 import { OES_vertex_array_object } from "./gl_oes_vertex_array_object";
 import { WebGLUniformLocation } from "./gl_uniform_location";
-import { Float32List, Int32List, GLenum, GLsizei } from "./gl_type";
 import { ImageBitmap } from "./gl_Image_bitmap";
 import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
 import { Assemble } from "../../commands/assemble";
+type Float32List = Float32Array;
+type WebGLPowerPreference = "default";
+type GLsizei = i32;
+type GLenum = u32;
+type Int32List = Int32Array;
 
-export class WebGLRenderingContext extends Assemble implements WebGLRenderingContextBase {
+// implements WebGLRenderingContextBase
+export class WebGLRenderingContext extends Assemble {
     public ACTIVE_ATTRIBUTES: GLenum;
     public ACTIVE_TEXTURE: GLenum;
     public ACTIVE_UNIFORMS: GLenum;
@@ -349,11 +354,15 @@ export class WebGLRenderingContext extends Assemble implements WebGLRenderingCon
     public blendFuncSeparate(srcRGB: number, dstRGB: number, srcAlpha: number, dstAlpha: number): void {
         throw new Error("Method not implemented.");
     }
-    public bufferData(target: number, size: number, usage: number): void;
-    public bufferData(target: number, data: ArrayBuffer | null, usage: number): void;
-    public bufferData(target: any, data: any, usage: any) {
+
+    // public bufferData(target: number, size: number, usage: number): void {
+    //     throw new Error("Method not implemented.");
+    // }
+
+    public bufferData(target: number, data: ArrayBuffer | null, usage: number): void {
         throw new Error("Method not implemented.");
     }
+
     bufferSubData(target: number, offset: number, data: ArrayBuffer): void {
         throw new Error("Method not implemented.");
     }
@@ -489,7 +498,7 @@ export class WebGLRenderingContext extends Assemble implements WebGLRenderingCon
     getAttribLocation(program: WebGLProgram, name: string): number {
         throw new Error("Method not implemented.");
     }
-    getBufferParameter(target: number, pname: number) {
+    getBufferParameter(target: number, pname: number): void {
         throw new Error("Method not implemented.");
     }
     getContextAttributes(): WebGLContextAttributes | null {
@@ -506,25 +515,25 @@ export class WebGLRenderingContext extends Assemble implements WebGLRenderingCon
     getExtension(extensionName: "OES_vertex_array_object"): OES_vertex_array_object | null {
         throw new Error("Method not implemented.");
     }
-    getFramebufferAttachmentParameter(target: number, attachment: number, pname: number) {
+    getFramebufferAttachmentParameter(target: number, attachment: number, pname: number): void {
         throw new Error("Method not implemented.");
     }
-    getParameter(pname: number) {
+    getParameter(pname: number): void {
         throw new Error("Method not implemented.");
     }
     getProgramInfoLog(program: WebGLProgram): string | null {
         throw new Error("Method not implemented.");
     }
-    getProgramParameter(program: WebGLProgram, pname: number) {
+    getProgramParameter(program: WebGLProgram, pname: number): void {
         throw new Error("Method not implemented.");
     }
-    getRenderbufferParameter(target: number, pname: number) {
+    getRenderbufferParameter(target: number, pname: number): void {
         throw new Error("Method not implemented.");
     }
     getShaderInfoLog(shader: WebGLShader): string | null {
         throw new Error("Method not implemented.");
     }
-    getShaderParameter(shader: WebGLShader, pname: number) {
+    getShaderParameter(shader: WebGLShader, pname: number): void {
         throw new Error("Method not implemented.");
     }
     getShaderPrecisionFormat(shadertype: number, precisiontype: number): WebGLShaderPrecisionFormat | null {
@@ -536,16 +545,16 @@ export class WebGLRenderingContext extends Assemble implements WebGLRenderingCon
     getSupportedExtensions(): string[] | null {
         throw new Error("Method not implemented.");
     }
-    getTexParameter(target: number, pname: number) {
+    getTexParameter(target: number, pname: number): void {
         throw new Error("Method not implemented.");
     }
-    getUniform(program: WebGLProgram, location: WebGLUniformLocation) {
+    getUniform(program: WebGLProgram, location: WebGLUniformLocation): void {
         throw new Error("Method not implemented.");
     }
     getUniformLocation(program: WebGLProgram, name: string): WebGLUniformLocation | null {
         throw new Error("Method not implemented.");
     }
-    getVertexAttrib(index: number, pname: number) {
+    getVertexAttrib(index: number, pname: number): void {
         throw new Error("Method not implemented.");
     }
     getVertexAttribOffset(index: number, pname: number): number {
@@ -623,22 +632,28 @@ export class WebGLRenderingContext extends Assemble implements WebGLRenderingCon
     stencilOpSeparate(face: number, fail: number, zfail: number, zpass: number): void {
         throw new Error("Method not implemented.");
     }
-    texImage2D(target: number, level: number, internalformat: number, width: number, height: number, border: number, format: number, type: number, pixels: ArrayBufferView<ArrayBuffer> | null): void;
-    texImage2D(target: number, level: number, internalformat: number, format: number, type: number, source: ImageBitmap): void;
-    texImage2D(target: any, level: any, internalformat: any, width: any, height: any, border: any, format?: any, type?: any, pixels?: any) {
+    texImage2D(target: number, level: number, internalformat: number, width: number, height: number, border: number, format: number, type: number, pixels: ArrayBufferView<ArrayBuffer> | null): void {
         throw new Error("Method not implemented.");
     }
+
+    // texImage2D(target: number, level: number, internalformat: number, format: number, type: number, source: ImageBitmap): void;
+    // texImage2D(target: any, level: any, internalformat: any, width: any, height: any, border: any, format?: any, type?: any, pixels?: any) {
+    //     throw new Error("Method not implemented.");
+    // }
     texParameterf(target: number, pname: number, param: number): void {
         throw new Error("Method not implemented.");
     }
     texParameteri(target: number, pname: number, param: number): void {
         throw new Error("Method not implemented.");
     }
-    texSubImage2D(target: number, level: number, xoffset: number, yoffset: number, width: number, height: number, format: number, type: number, pixels: ArrayBufferView<ArrayBuffer> | null): void;
-    texSubImage2D(target: number, level: number, xoffset: number, yoffset: number, format: number, type: number, source: ImageBitmap): void;
-    texSubImage2D(target: any, level: any, xoffset: any, yoffset: any, width: any, height: any, format: any, type?: any, pixels?: any) {
+    texSubImage2D(target: number, level: number, xoffset: number, yoffset: number, width: number, height: number, format: number, type: number, pixels: ArrayBufferView<ArrayBuffer> | null): void {
         throw new Error("Method not implemented.");
     }
+
+    // texSubImage2D(target: number, level: number, xoffset: number, yoffset: number, format: number, type: number, source: ImageBitmap): void;
+    // texSubImage2D(target: any, level: any, xoffset: any, yoffset: any, width: any, height: any, format: any, type?: any, pixels?: any) {
+    //     throw new Error("Method not implemented.");
+    // }
     uniform1f(location: WebGLUniformLocation | null, x: number): void {
         throw new Error("Method not implemented.");
     }
