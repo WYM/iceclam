@@ -1,11 +1,11 @@
 import { Assemble } from "../../commands/assemble";
-import { Command, CommandArgs } from "../../commands/command";
+import { Command, CommandArgs } from "../../../../command/command";
 import { WebGLRenderingContext } from "../gl/gl_webgl_rendering_context";
 import { WebGL2RenderingContext } from "../gl/gl_webgl2_rendering_context";
 import "allocator/tlsf";
 // import { WebElement } from "./document";
 
-export class HTMLCanvasElement extends Assemble{
+export class HTMLCanvasElement extends Assemble {
 
     /**
      * 初始化

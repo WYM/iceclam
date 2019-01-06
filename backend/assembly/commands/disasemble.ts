@@ -1,3 +1,4 @@
+import "allocator/tlsf";
 import { CommandBuffer } from "./command_buffer";
 
 /**

@@ -3,9 +3,8 @@ import * as serve from 'koa-static';
 import * as path from "path";
 import * as yargs from 'yargs';
 import * as fs from "fs";
-import { Command } from '../../frontend/commands/command';
+import { CommandParser } from '../../frontend/commands/command';
 import { BackendInterop } from "../../frontend/interop/backend";
-
 import { Builder } from '../../script/builder';
 import { Browser } from "./browser";
 
@@ -31,9 +30,7 @@ const compile = async (file: string) => {
 
 const callback = async () => {
     const file = argvs.file as string;
-
     await compile(file);
-
     const browser = new Browser();
     await browser.getBrowser();
     browser.toPage('http://127.0.0.1:3000/');
@@ -41,7 +38,7 @@ const callback = async () => {
         return new Promise<void>(async r => {
             const filepath = path.relative(__dirname, `../wasm/${file}.wasm`);
             const buffer = fs.readFileSync(filepath);
-            const interop = new BackendInterop<Command & { test(): void }>();
+            const interop = new BackendInterop<CommandParser<{}> & { test(): void }>();
             await interop.init(void 0, buffer);
             interop.module.test();
             r();

@@ -1,10 +1,11 @@
-import { Command, CommandArgs } from "./command";
+import "allocator/tlsf";
+import { Command, CommandArgs } from "../../../command/command";
 
 // @ts-ignore
 @external("command", "commit")
-declare function commit(array: Float64Array): void;
+declare function commit(array: Int32Array): void;
 
-let id: f64 = 0;
+let id: i32 = 1;
 
 /**
  * 命令缓冲
@@ -24,10 +25,10 @@ export class CommandBuffer {
      * ---command---args---id----command---args---id~~~
      *
      * @private
-     * @type {Float64Array}
+     * @type {Int32Array}
      * @memberof CommandBuffer
      */
-    private _buffer: Float64Array;
+    private _buffer: Int32Array;
 
     /**
      * 指针偏移
@@ -68,7 +69,7 @@ export class CommandBuffer {
      * @memberof CommandBuffer
      */
     public constructor() {
-        this._buffer = new Float64Array(4096);
+        this._buffer = new Int32Array(4096);
         this._offset = 0;
     }
 
@@ -80,8 +81,9 @@ export class CommandBuffer {
      * @param {CommandArgs} arg0
      * @memberof CommandBuffer
      */
-    public write(arg0: f64): void {
-        unchecked(this._buffer[this._offset++] = arg0);
+    public write(arg0: i32): void {
+        ++this._offset;
+        unchecked(this._buffer[this._offset] = <i32>arg0);
     }
 
     /**
@@ -95,7 +97,7 @@ export class CommandBuffer {
      */
     @inline
     public writeZeroArgsCommand(command: Command): void {
-        unchecked(this._buffer[this._offset++] = (<f64>command) * 10 + 0);
+        this.write(<i32>command * <i32>10 + <i32>0);
     }
 
     /**
@@ -111,8 +113,8 @@ export class CommandBuffer {
      */
     @inline
     public writeOneArgsCommand(command: Command, arg0: CommandArgs): void {
-        unchecked(this._buffer[this._offset++] = (<f64>command) * 10 + 1);
-        unchecked(this._buffer[this._offset++] = arg0);
+        this.write(<i32>command * <i32>10 + <i32>1);
+        this.write(<i32>arg0);
     }
 
     /**
@@ -125,8 +127,8 @@ export class CommandBuffer {
      */
     @inline
     public commit(): void {
-        unchecked(this._buffer[this._offset++] = Command.end);
-        unchecked(this._buffer[this._offset++] = this._offset);
+        this.write(<i32>Command.end);
+        this.write(<i32>this._offset);
         commit(this._buffer);
         this.reset();
     }
@@ -144,7 +146,7 @@ export class CommandBuffer {
     @inline
     private reset(): void {
         for (let i = 0, l = this._offset; i < l; i++) {
-            unchecked(this._buffer[this._offset++] = Command.invalid);
+            unchecked(this._buffer[i] = <i32>Command.invalid);
         }
 
         this._offset = 0;
@@ -195,11 +197,11 @@ export class CommandBuffer {
      * @author 
      * @date 2019-01-05
      * @static
-     * @returns {f64}
+     * @returns {i32}
      * @memberof CommandBuffer
      */
     @inline
-    public static gID(): f64 {
+    public static gID(): i32 {
         return id++;
     }
 }

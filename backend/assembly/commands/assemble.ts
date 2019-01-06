@@ -1,5 +1,6 @@
+import "allocator/tlsf";
 import { CommandBuffer } from "./command_buffer";
-import { Command, CommandArgs } from "./command";
+import { Command, CommandArgs } from "../../../command/command";
 
 /**
  * 命令缓冲组装器
@@ -19,7 +20,7 @@ export class Assemble {
      * @type {f64}
      * @memberof Assemble
      */
-    public id: f64 = CommandBuffer.gID();
+    public id: i32 = CommandBuffer.gID();
 
     /**
      * 命令缓冲
