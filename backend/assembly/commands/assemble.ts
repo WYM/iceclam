@@ -56,7 +56,7 @@ export class Assemble {
      * @protected
      * @param {Command} command
      * @memberof Assemble
-     */ 
+     */
     public writeZeroArgsCommand(command: Command): void {
         this._commandbuffer.writeZeroArgsCommand(command);
         this._commandbuffer.write(this.id);

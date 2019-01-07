@@ -22,7 +22,7 @@ export class gl {
 
     public getContext(id: number, command: CommandArgs): void {
         let canvas = this._obj[1];
-        let gl = canvas.getContext(Command[command]);
+        let gl = canvas.getContext(CommandArgs[command]);
         this._obj[id] = gl;
     }
 }
