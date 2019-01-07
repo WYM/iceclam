@@ -28,7 +28,7 @@ export class CommandParser<T> {
         let args = [];
         for (let i = 1, l = buffer.length; i < l; i++) {
             let command = buffer[i];
-            if (command === 9999) {
+            if (command === Command.end) {
                 return;
             }
             args.length = 0;
