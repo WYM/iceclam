@@ -1,4 +1,4 @@
-import * as loader from "assemblyscript/lib/loader";
+import * as loader from "assemblyscript/lib/loader/index.js";
 import { CommandParser } from "../commands/command";
 
 interface CustomeImportsObject extends loader.ImportsObject {

@@ -1,17 +1,9 @@
-import { UObject } from "../../base/object";
+import { Assemble } from "../../commands/assemble";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGLActiveInfo
 
-// @ts-ignore
-@external("gl", "newActiveInfo")
-export declare function newActiveInfo(id: i64): void;
-
-export class WebGLActiveInfo extends UObject {
+export class WebGLActiveInfo extends Assemble {
     public readonly name: string;
     public readonly size: i32 /**GLint */;
     public readonly type: u32 /**GLenum */;
-
-    public create(): void {
-        newActiveInfo(this.id);
-    }
 }

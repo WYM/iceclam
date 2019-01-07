@@ -26,28 +26,25 @@ export class CommandParser<T> {
     public commit(ptr: number): void {
         const gl = this._gl;
         const buffer = this.backendInterop.module.getArray<Int32Array>(Int32Array, ptr);
-        console.log(buffer);
-        
         let args = [];
         for (let i = 1, l = buffer.length; i < l; i++) {
-            const command = buffer[i];
+            let command = buffer[i];
             if (command === 9999) {
                 return;
             }
-            console.log(command);
-
             args.length = 0;
             const argsCount = command % 10;
-
-            console.log(argsCount);
-
+            command = (command - argsCount) / 10;
             if (argsCount) {
-                for (; i < i + argsCount; i++) {
+                i++;
+                args.length = 1;
+                for (let count = i + argsCount; i < count; ++i) {
                     args[args.length++] = buffer[i];
                 }
+                args[0] = buffer[i];
+            } else {
+                args[0] = buffer[++i];
             }
-
-            console.log(args);
 
             const wrapper = (<any>gl)[Command[command]] as Function;
             if (wrapper) {

@@ -5,7 +5,8 @@ export interface WebElement {
 }
 
 /**
- *
+ * https://developer.mozilla.org/en-US/docs/Web/API/Document
+ * 
  *
  * @author 
  * @date 2019-01-05

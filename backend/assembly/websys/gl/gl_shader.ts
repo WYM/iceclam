@@ -1,13 +1,5 @@
-import { UObject } from "../../base/object";
+import { Assemble } from "../../commands/assemble";
 
-// https://developer.mozilla.org/en-US/docs/Web/API/WebGLShader
+export class WebGLShader extends Assemble {
 
-// @ts-ignore
-@external("gl", "newShader")
-export declare function newShader(id: i64): void;
-
-export class WebGLShader extends UObject {
-    public create(): void {
-        newShader(this.id);
-    }
 }

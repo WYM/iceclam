@@ -9,16 +9,15 @@ import { WebGLActiveInfo } from "./gl_activeInfo";
 import { WebGLContextAttributes } from "./gl_context_attributes";
 import { OES_vertex_array_object } from "./gl_oes_vertex_array_object";
 import { WebGLUniformLocation } from "./gl_uniform_location";
-import { ImageBitmap } from "./gl_Image_bitmap";
 import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
 import { Assemble } from "../../commands/assemble";
+
 type Float32List = Float32Array;
 type WebGLPowerPreference = "default";
 type GLsizei = i32;
 type GLenum = u32;
 type Int32List = Int32Array;
 
-// implements WebGLRenderingContextBase
 export class WebGLRenderingContext extends Assemble {
     public ACTIVE_ATTRIBUTES: GLenum;
     public ACTIVE_TEXTURE: GLenum;

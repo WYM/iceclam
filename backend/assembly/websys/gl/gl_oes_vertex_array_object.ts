@@ -1,10 +1,10 @@
-import { UObject } from "../../base/object";
+import { Assemble } from "../../commands/assemble";
 
-export class WebGLVertexArrayObjectOES extends UObject {
+export class WebGLVertexArrayObjectOES extends Assemble {
 
 }
 
-export class OES_vertex_array_object extends UObject {
+export class OES_vertex_array_object extends Assemble {
     public readonly VERTEX_ARRAY_BINDING_OES: u32 /**GLenum */;
 
     public bindVertexArrayOES(arrayObject: WebGLVertexArrayObjectOES | null): void {

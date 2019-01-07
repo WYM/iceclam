@@ -1,10 +1,6 @@
-import { UObject } from "../../base/object";
+import { Assemble } from "../../commands/assemble";
 
-// @ts-ignore
-@external("gl", "newContextAttributes")
-export declare function newContextAttributes(id: i64): void;
-
-export class WebGLContextAttributes extends UObject {
+export class WebGLContextAttributes extends Assemble {
     public alpha: u8; /**GLboolean */
     public antialias: u8; /**GLboolean */
     public depth: u8; /**GLboolean */
@@ -13,8 +9,4 @@ export class WebGLContextAttributes extends UObject {
     public premultipliedAlpha: u8; /**GLboolean */
     public preserveDrawingBuffer: u8; /**GLboolean */
     public stencil: u8; /**GLboolean */
-
-    public create(): void {
-        newContextAttributes(this.id);
-    }
 }

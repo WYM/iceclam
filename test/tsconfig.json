@@ -3,6 +3,7 @@
     "module": "commonjs",
     "lib": ["dom", "esnext", "es2015.promise"],
     "target": "esnext",
+    "sourceMap": false,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "skipLibCheck": true,

@@ -8,23 +8,6 @@ import { WebGLActiveInfo } from "./gl_activeInfo";
 import { WebGLContextAttributes } from "./gl_context_attributes";
 import { WebGLUniformLocation } from "./gl_uniform_location";
 import { WebGLShaderPrecisionFormat } from "./gl_shader_precision_format";
-// import {
-//     i32 /**GLsizei */,
-//     GLenum,
-//     u32 /** */,
-//     f32 /** GLclampf*/,
-//     ArrayBuffer /**BufferSource */,
-//     i32 /**GLsizei */ptr,
-//     isize /** GLintptr*/,
-//     u32 /** */,
-//     u8 /** GLboolean*/i32 /**GLsizei */
-//     GLint,
-//     f32 /**GFloat */,
-//     // Float32Array /** Float32List*/,
-//     Int32List /** Int32List*/,
-//     TexImageSource
-// } from "./gl_tyInt32Array /** Int32List*/e";
-// type Float32Array /** Float32List*/ = Float32Array;
 import { EXT_blend_minmax } from "./gl_extensions";
 import { OES_vertex_array_object } from "./gl_oes_vertex_array_object";
 

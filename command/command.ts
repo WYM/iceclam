@@ -22,5 +22,5 @@ export enum Command {
  */
 export enum CommandArgs {
     webgl = 1,
-    webgl2,
+    webgl2 = 2,
 }
