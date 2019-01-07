@@ -1,4 +1,3 @@
-import { UObject } from "../../base/object";
 import { Assemble } from "../../commands/assemble";
 
 // https://developer.mozilla.org/en-US/docs/Web/API/WebGLBuffer

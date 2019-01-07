@@ -20,6 +20,7 @@ export class HTMLCanvasElement extends Assemble {
 
     /**
      * 
+     * 获取gl上下文
      * 
      * 
      * ```ts
@@ -28,7 +29,6 @@ export class HTMLCanvasElement extends Assemble {
      * ```
      *
      * @author 
-     * @date 2019-01-04
      * @template T
      * @returns {T}
      * @memberof HTMLCanvasElement

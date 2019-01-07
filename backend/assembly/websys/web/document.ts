@@ -20,7 +20,6 @@ export class document {
      * create a new element object
      *
      * @author 
-     * @date 2019-01-05
      * @static
      * @template T
      * @returns {T}

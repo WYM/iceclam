@@ -6,7 +6,6 @@ import { CommandBuffer } from "./command_buffer";
  * command buffer disasemble
  *
  * @author 
- * @date 2019-01-04
  * @export
  * @class Disasemble
  */

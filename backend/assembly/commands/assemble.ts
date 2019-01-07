@@ -7,7 +7,6 @@ import { Command, CommandArgs } from "../../../command/command";
  * command buffer assembler
  *
  * @author 
- * @date 2019-01-04
  * @export
  * @class Assemble
  */
@@ -40,7 +39,6 @@ export class Assemble {
      * 
      * Creates an instance of Assemble.
      * @author 
-     * @date 2019-01-04
      * @memberof Assemble
      */
     public constructor() {
@@ -52,7 +50,6 @@ export class Assemble {
      * write commands that do not require parameters
      *
      * @author 
-     * @date 2019-01-05
      * @protected
      * @param {Command} command
      * @memberof Assemble
@@ -67,7 +64,6 @@ export class Assemble {
      * write a command that requires one argument
      *
      * @author 
-     * @date 2019-01-05
      * @protected
      * @param {Command} command
      * @param {CommandArgs} arg0
@@ -83,7 +79,6 @@ export class Assemble {
      * Commit buffer command
      *
      * @author 
-     * @date 2019-01-04
      * @memberof Assemble
      */
     public commit(): void {

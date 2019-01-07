@@ -6,7 +6,6 @@ import { gl } from "../api/gl";
  *
  *
  * @author 
- * @date 2019-01-05
  * @export
  * @class Command
  */

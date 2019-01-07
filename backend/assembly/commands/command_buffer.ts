@@ -12,7 +12,6 @@ let id: i32 = 1;
  * command buffer
  *
  * @author 
- * @date 2019-01-04
  * @export
  * @class CommandBuffer
  */
@@ -65,7 +64,6 @@ export class CommandBuffer {
      * command buffer
      * 
      * @author 
-     * @date 2019-01-04
      * @memberof CommandBuffer
      */
     public constructor() {
@@ -77,7 +75,6 @@ export class CommandBuffer {
      * 写入一个值
      *
      * @author 
-     * @date 2019-01-05
      * @param {CommandArgs} arg0
      * @memberof CommandBuffer
      */
@@ -91,7 +88,6 @@ export class CommandBuffer {
      * Write commands that do not require parameters
      * 
      * @author 
-     * @date 2019-01-05
      * @param {Command} command
      * @memberof CommandBuffer
      */
@@ -105,7 +101,6 @@ export class CommandBuffer {
      * write a command that requires one argument
      *
      * @author 
-     * @date 2019-01-05
      * @template T
      * @param {Command} command
      * @param {T} arg0
@@ -122,7 +117,6 @@ export class CommandBuffer {
      * commit buffer command
      *
      * @author 
-     * @date 2019-01-05
      * @memberof CommandBuffer
      */
     @inline
@@ -139,7 +133,6 @@ export class CommandBuffer {
      * reset the already committed command buffer
      * 
      * @author 
-     * @date 2019-01-05
      * @private
      * @memberof CommandBuffer
      */
@@ -157,7 +150,6 @@ export class CommandBuffer {
      * get a unique command buffer assembler
      * 
      * @author 
-     * @date 2019-01-04
      * @static
      * @returns {CommandBuffer}
      * @memberof CommandBuffer
@@ -176,7 +168,6 @@ export class CommandBuffer {
      * get a unique command buffer disasemble
      * 
      * @author 
-     * @date 2019-01-04
      * @static
      * @returns {CommandBuffer}
      * @memberof CommandBuffer
@@ -195,7 +186,6 @@ export class CommandBuffer {
      * get a unique ID
      *
      * @author 
-     * @date 2019-01-05
      * @static
      * @returns {i32}
      * @memberof CommandBuffer
