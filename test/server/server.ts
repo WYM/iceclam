@@ -20,11 +20,6 @@ if (argvs.puppeteer) {
     ));
 } else {
     const file = argvs.file as string;
-    // let string = ts.register({
-    //     project: '../tsconfig.json'
-    // }).compile(fs.readFileSync(path.relative(__dirname, './index.ts')).toString('utf-8'), path.relative(__dirname, './index.ts'));
-    // string = string.replace("$file", file);
-
     let router = new Router()
     router.get("/wasm/*", ctx => {
         const url = ctx.request.url;
@@ -35,8 +30,6 @@ if (argvs.puppeteer) {
 
     let string = fs.readFileSync('./dist/bundle.js').toString('utf-8');
     string = string.replace("$file", file);
-    // console.log(string);
-
     router.get('/', ctx => {
         ctx.response.type = 'html';
         ctx.body = `
