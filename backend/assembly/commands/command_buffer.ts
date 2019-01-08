@@ -79,8 +79,8 @@ export class CommandBuffer {
      * @memberof CommandBuffer
      */
     public write(arg0: i32): void {
-        ++this._offset;
         unchecked(this._buffer[this._offset] = <i32>arg0);
+        ++this._offset;
     }
 
     /**
